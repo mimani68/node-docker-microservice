@@ -1,8 +1,10 @@
-version: '2'
+version: '3.6'
+
 services:
+
   users-service:
-    build: ./users-service
-    container_name: users_service
+    build: 
+      context: ./users-service
     ports:
      - "8123:8123"
     links:
@@ -11,5 +13,6 @@ services:
      - db
     environment:
      - DATABASE_HOST=db
+
   db:
     build: ./test-database
