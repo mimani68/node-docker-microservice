@@ -1,19 +1,21 @@
 {
-  "name": "users-service",
-  "version": "1.0.0",
-  "description": "Basic service for retrieving user information from the directory.",
+  "name": "api-service",
+  "version": "1.0.1",
+  "description": "sample node docker project",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dwmkerr/node-docker-microservice.git"
+    "url": "git://github.com/mimani68/node-docker-microservice.git"
   },
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "mocha -R spec **/*.spec.js",
     "debug": "node-debug index.js",
-    "lint": "eslint ."
+    "dev:watch:inspect": "./node_modules/.bin/nodemon index.js -- --inspect=0.0.0.0:9229",
+    "lint": "./node_modules/.bin/eslint .",
+    "lint:fix": "./node_modules/.bin/eslint --fix ."
   },
-  "author": "Dave Kerr, dwmkerr@gmail.com",
+  "author": "Mahdi Imani, <imani.mahdi@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
@@ -22,6 +24,11 @@
   },
   "devDependencies": {
     "eslint": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "mocha": "^2.4.5",
     "node-inspector": "^0.12.7",
     "should": "^8.3.0",
